@@ -1,65 +1,124 @@
-import Image from "next/image";
+import Hero from "../components/Hero";
+import Section from "../components/Section";
+import Container from "../components/Container";
+import ServiceCard from "../components/ServiceCard";
+import ValueItem from "../components/ValueItem";
+import Button from "../components/Button";
+import KpiSection from "../components/KpiSection";
+import LogoSlider from "@/components/LogoSlider";
+import {
+  Boxes, PackageSearch, DraftingCompass, Cube, Cpu, Code2,
+  Wrench, Settings2, ShoppingCart, BadgeCheck, GraduationCap, BookOpenCheck
+} from "lucide-react";
 
-export default function Home() {
+
+
+export default function HomePage() {
+  const logos = [
+    "/images/logos/logo7.png",
+    "/images/logos/logo1.png",
+    "/images/logos/logo2.png",
+    "/images/logos/logo3.png",
+    "/images/logos/logo4.png",
+    "/images/logos/logo5.png",
+    "/images/logos/logo6.png",
+    "/images/logos/logo8.png",
+    "/images/logos/logo9.png",
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Hero
+        title="Packaging the World, a Runner at a Time"
+        sub="Tooling, moulding & stamping experts driving innovation through precision engineering."
+      >
+        <video src="/home-video.mp4" autoPlay loop muted className="w-full h-full rounded-2xl" />
+      </Hero>
+      <div className="mx-auto w-full py-10">
+        <LogoSlider
+          logos={logos}
+          heightClass="h-10 sm:h-12 md:h-14"
+          gapClass="gap-10 sm:gap-12 md:gap-14"
+          speed={28}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </div>
+
+      {/* About Preview */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="card rounded-2xl p-6">
+              <div className="kicker mb-1">About Preview</div>
+              <h3 className="h3 mb-2">Who We Are</h3>
+              <p className="mb-3">
+                Moulding Technicians PTY Ltd is a engineering company specialising in plastic moulding, tool design,
+                SolidCAM software resale, and technical training.
+              </p>
+              <p className="mb-4">
+                We combine design insight, manufacturing discipline, and software integration to deliver complete tooling solutions—from
+                concept sketches to fully commissioned moulds.
+              </p>
+              <Button href="/about">Learn More</Button>
+            </div>
+            <div className="panel grid min-h-[220px] place-items-center rounded-2xl p-3">
+              <img src="/images/rosslyn-workshop.png" alt="About Moulding Technicians" className="rounded-2xl object-cover w-full h-full" />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Services Summary */}
+      <Section>
+        <Container>
+          <div className="kicker mb-1">Core Services</div>
+          <h3 className="h3 mb-6">What We Do</h3>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <ServiceCard title="Plastic Moulding Solutions" desc="Prototype to high-volume; multi-cavity; material optimisation; maintenance." icon={Boxes} />
+            <ServiceCard title="Mould & Tool Design" desc="3D modelling, simulation, DFM, full data packs with assemblies & revisions." icon={DraftingCompass} />
+            <ServiceCard title="CAM Programming – CNC" desc="Custom G-code & strategies; milling, turning, EDM; training & posts." icon={Cpu} />
+            <ServiceCard title="Machining & Prototyping" desc="High-accuracy spares & concept parts. Tolerances within ±0.005 mm." icon={Wrench} />
+            <ServiceCard title="SolidCAM Reselling" desc="Licensing, module setup, installation, and ongoing support." icon={BadgeCheck} />
+            <ServiceCard title="Training & Certification" desc="Hands-on SolidCAM, CNC operation, maintenance; industry-recognised certificates." icon={GraduationCap} />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Why Choose Us */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <div className="kicker">Why Choose Us</div>
+              <ValueItem code="In" title="Innovation" desc="Applying SolidCAM and 3D simulation for unmatched accuracy." />
+              <ValueItem code="Ig" title="Integrity" desc="Transparent quotations & ethical operations." />
+              <ValueItem code="Ex" title="Excellence" desc="PTSA-qualified toolmakers delivering ISO-level precision." />
+              <ValueItem code="Su" title="Sustainability" desc="Efficient material usage and eco-conscious manufacturing." />
+            </div>
+            <div className="md:grid hidden min-h-[180px] place-items-start rounded-2xl">
+              <KpiSection />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* CTA */}
+      <Section>
+        <Container>
+          <div
+            className="rounded-2xl bg-gradient-to-r from-[var(--blue)] to-[#004b8a] p-6 text-white bg-cover bg-center h-60"
+            style={{
+              backgroundImage: "url('/images/bg.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "top center",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <h3 className="h3">Let’s Build Something Precise.</h3>
+            <p className="mt-1 opacity-95">Talk to our team about your next tooling or moulding project.</p>
+            <div className="mt-4">
+              <Button href="/contact">Contact Us</Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

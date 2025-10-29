@@ -1,66 +1,52 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import Container from "./Container";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-  ];
+  const NavLinks = ({ onClick }) => (
+    <>
+      <Link href="/" className="rounded-lg px-3 py-2 hover:bg-[#002a55] hover:text-white" onClick={onClick}>Home</Link>
+      <Link href="/services" className="rounded-lg px-3 py-2 hover:bg-[#002a55] hover:text-white" onClick={onClick}>Services</Link>
+      <Link href="/about" className="rounded-lg px-3 py-2 hover:bg-[#002a55] hover:text-white" onClick={onClick}>About</Link>
+      <Link href="/contact" className="rounded-lg px-3 py-2 hover:bg-[#002a55] hover:text-white" onClick={onClick}>Contact</Link>
+    </>
+  );
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 z-50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-brand">
-          MyBrand
-        </Link>
+    <header className="sticky top-0 z-40 border-b-4 border-[#002448] bg-[var(--blue)] text-white">
+      <Container>
+        <div className="flex items-center justify-between py-3">
+          <Link href="/" className="flex items-center gap-1 font-extrabold tracking-wide">
+            <img src="/images/logo.svg" alt="Moulding Technicians Logo" className="h-10 w-auto brightness-0 invert" />
+          </Link>
+          <nav className="hidden gap-2 md:flex" aria-label="Main">
+            <NavLinks />
+          </nav>
+          <button
+            className="rounded-lg px-3 py-2 hover:bg-[#002a55] md:hidden"
+            aria-label="Open menu"
+            onClick={() => setOpen(true)}
+          >
+            ☰
+          </button>
+        </div>
+      </Container>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-gray-700 hover:text-brand transition-colors font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-gray-700 hover:text-brand transition-colors"
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Dropdown */}
-      {menuOpen && (
-        <nav className="md:hidden bg-white border-t border-gray-100 shadow-inner animate-fadeIn">
-          <ul className="flex flex-col space-y-2 px-4 py-3">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block text-gray-700 hover:text-brand transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      {/* Mobile drawer */}
+      {open && (
+        <div className="md:hidden">
+          <div className="bg-[var(--blue)]/95 px-4 pb-4">
+            <div className="flex justify-end py-2">
+              <button className="rounded-lg px-3 py-2 hover:bg-[#002a55]" onClick={() => setOpen(false)}>✕</button>
+            </div>
+            <div className="flex flex-col gap-1">
+              <NavLinks onClick={() => setOpen(false)} />
+            </div>
+          </div>
+        </div>
       )}
     </header>
   );
