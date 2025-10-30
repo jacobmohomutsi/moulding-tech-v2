@@ -51,7 +51,7 @@ export default function HomePage() {
               <h3 className="h3 mb-2">Who We Are</h3>
               <p className="mb-3">
                 Moulding Technicians PTY Ltd is a engineering company specialising in plastic moulding, tool design,
-                SolidCAM software resale, and technical training.
+                SolidCAM software resellers, and technical training.
               </p>
               <p className="mb-4">
                 We combine design insight, manufacturing discipline, and software integration to deliver complete tooling solutions—from

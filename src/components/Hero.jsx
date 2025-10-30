@@ -7,7 +7,7 @@ export default function Hero({ title, sub, primaryHref = "/services", secondaryH
       <Container>
         <div className="grid grid-cols-1 gap-6 py-10 md:grid-cols-2 md:py-16">
           <div>
-            <div className="kicker mb-3">Pretoria East • Precision Engineering</div>
+            <div className="kicker mb-3">Pretoria North • Precision Engineering</div>
             <h1 className="h1">{title}</h1>
             {sub && <p className="mt-3 max-w-prose opacity-90">{sub}</p>}
             <div className="mt-6 flex gap-3">

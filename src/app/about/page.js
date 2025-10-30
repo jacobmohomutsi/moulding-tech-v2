@@ -81,8 +81,8 @@ export default function AboutPage() {
               <div className="grid place-items-center rounded-full border border-dashed border-gray-300 bg-gray-100 w-3/4 text-gray-500">
                     <img src="/images/info.png" alt="Services at Moulding Technicians" className="rounded-full object-cover h-full" />
               </div>
-              <div className="mt-3 text-center font-semibold">Victor Mateveke</div>
-              <div className="text-sm text-center opacity-90">Tool, Jig & Die Maker — 10+ yrs in plastic injection, blow moulding, press tooling. SolidWorks, EdgeCAM, Fusion 360.</div>
+              <div className="mt-3 text-center font-semibold">Ridovhona Muhadi</div>
+              <div className="text-sm text-center opacity-90">Lead Machinist (TDM) PTSA — Designing and Machining</div>
             </Card>
           </div>
         </Container>
