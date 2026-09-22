@@ -13,6 +13,23 @@ import {
 
 
 
+import { SITE } from "@/lib/site";
+
+export const metadata = {
+  title: "Precision Plastic Moulding & Tooling Solutions in South Africa",
+  description:
+    "Moulding Technicians PTY Ltd offers expert plastic moulding, tool design, CNC CAM programming, SolidCAM software reselling, and technical training in Pretoria & Rosslyn.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Moulding Technicians · Precision Plastic Moulding & Tooling Solutions",
+    description:
+      "Pretoria-based experts in plastic moulding, tool design, CNC CAM programming, SolidCAM reselling, and technical training.",
+    url: SITE.url,
+  },
+};
+
 export default function HomePage() {
   const logos = [
     "/images/logos/logo7.png",

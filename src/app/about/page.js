@@ -3,7 +3,22 @@ import Section from "../../components/Section";
 import Container from "../../components/Container";
 import Card from "../../components/Card";
 import LogoSlider from "@/components/LogoSlider";
-export const metadata = { title: "About Moulding Technicians" };
+import { SITE } from "@/lib/site";
+
+export const metadata = {
+  title: "About Us | Qualified Toolmakers & Moulding Specialists",
+  description:
+    "Learn about Moulding Technicians PTY Ltd—PTSA-trained toolmakers, designers, and CAM specialists building Africa's next-gen manufacturing capability.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Moulding Technicians | Tooling & Moulding Experts",
+    description:
+      "Founded by PTSA-trained toolmakers, Moulding Technicians provides end-to-end plastic moulding, design, and CAM software integration.",
+    url: `${SITE.url}/about`,
+  },
+};
 
 export default function AboutPage() {
   const logos = [

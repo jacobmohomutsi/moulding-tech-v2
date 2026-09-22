@@ -5,7 +5,22 @@ import Card from "../../components/Card";
 import Badge from "../../components/Badge";
 import Button from "../../components/Button";
 import ServiceBlock from "../../components/ServiceBlock";
-export const metadata = { title: "Our Expertise in Action" };
+import { SITE } from "@/lib/site";
+
+export const metadata = {
+  title: "Services | Plastic Moulding, Tool Design & SolidCAM Reselling",
+  description:
+    "Explore our services: Plastic Moulding Solutions, Mould & Tool Design, CAM Programming, Machining & Prototyping, SolidCAM Reselling, and Technical Training.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Moulding & Tooling Services | Moulding Technicians",
+    description:
+      "From prototype to high-volume plastic injection moulding, 3D tool design, CNC CAM programming, and SolidCAM software reseller support.",
+    url: `${SITE.url}/services`,
+  },
+};
 import { Boxes, DraftingCompass, Cpu, Wrench, BadgeCheck, GraduationCap } from "lucide-react";
 
 export default function ServicesPage() {

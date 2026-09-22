@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid gap-4 md:grid-cols-3">
           <div>
             <div className="font-bold">
-                <img src="/images/logo.svg" alt="Moulding Technicians Logo" className="h-10 w-auto brightness-0 invert" />
+              <img src="/images/main-logo-light.png" alt="Moulding Technicians Logo" className="h-10 w-auto" />
             </div>
             <div><p className="hover:text-white text-sm mt-3">Moulding Technicians PTY Ltd is a engineering company specialising in plastic moulding, tool design, SolidCAM software resale, and technical training.</p></div>
           </div>
@@ -22,18 +22,18 @@ export default function Footer() {
           </div>
           <div className="text-sm opacity-90">
             <div className="flex items-center md:justify-end gap-3">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <Facebook className="h-7 w-7" />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <Instagram className="h-7 w-7" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <Linkedin className="h-7 w-7" />
-                </a>
-                <a href="https://wa.me/yourwhatsapplink" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              </a>
+              <a href="https://wa.me/yourwhatsapplink" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <MessageCircle className="h-7 w-7" />
-                </a>
+              </a>
             </div>
           </div>
         </div>
