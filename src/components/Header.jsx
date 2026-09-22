@@ -20,7 +20,7 @@ export default function Header() {
       <Container>
         <div className="flex items-center justify-between py-3">
           <Link href="/" className="flex items-center gap-1 font-extrabold tracking-wide">
-            <img src="/images/logo.svg" alt="Moulding Technicians Logo" className="h-10 w-auto brightness-0 invert" />
+            <img src="/images/main-logo-light.png" alt="Moulding Technicians Logo" className="h-10 w-auto" />
           </Link>
           <nav className="hidden gap-2 md:flex" aria-label="Main">
             <NavLinks />

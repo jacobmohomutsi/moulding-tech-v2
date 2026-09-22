@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mouldingtechnicians.co.za/sitemap.xml

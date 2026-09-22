@@ -5,7 +5,20 @@ import Card from "../../components/Card";
 import { SITE } from "../../lib/site";
 import ContactForm from "../../components/ContactForm";
 
-export const metadata = { title: "Get in Touch" };
+export const metadata = {
+  title: "Contact Us | Pretoria East & Rosslyn Toolmakers",
+  description:
+    "Get in touch with Moulding Technicians PTY Ltd for plastic moulding, tool design, CAM programming, or SolidCAM inquiries. Located in Rosslyn, Pretoria.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Moulding Technicians | Pretoria, South Africa",
+    description:
+      "Talk to our engineering team about your next moulding or tooling project. Phone: +27 73 475 2781 | Rosslyn, Pretoria.",
+    url: `${SITE.url}/contact`,
+  },
+};
 
 export default function ContactPage() {
   return (
